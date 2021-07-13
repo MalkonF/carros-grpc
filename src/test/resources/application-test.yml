@@ -2,3 +2,19 @@ datasources:
   default:
     url: jdbc:tc:postgresql:12:///postgres
     driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+#datasources:
+#  default:
+#    url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+#    driver:ClassName: org.h2.Driver
+
+#É sempre recomendado vc fazer os testes de integração utilizando outro banco sem ser o de desenvolvimento
+#pois este banco pode estar sujo devido a varios testes manuais que vc faz durante o desenvolvimento.
+#Então, ou utilize o h2 ou outro banco, ou então limpe o banco de desenvolvimento antes de rodar os testes
+#É uma boa prática tb utilizar um schema separado no banco de dev para fazer os testes:
+#datasources:
+#  default:
+#    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=carros-test
+#    driverClassName: org.postgresql.Driver
+
+#Para isso é necessário criar este schema no proprio banco

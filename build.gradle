@@ -43,6 +43,9 @@ dependencies {
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     testImplementation("io.micronaut:micronaut-http-client")
+    // tirar comentários se quiser que os testes usem o banco h2 e nao do docker
+    //testImplementation("com.h2database:h2")
+
 
 }
 
